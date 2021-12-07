@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Captcha Solver",
+  "version": "1.0",
+
+  "description": "Automatically solve image captchas!",
+
+  "icons": {
+    "48": "icons/social_icon.svg"
+  },
+  "browser_action": {
+    "default_icon": "icons/social_icon.svg",
+    "default_title": "Captcha Solver",
+    "default_popup": "popup/test.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.like4like.org/user/earn-youtube-video.php",
+        "https://www.like4like.org/user/earn-facebook-video.php",
+        "https://www.like4like.org/user/earn-soundcloud-listening.php",
+        "https://www.like4like.org/user/earn-sites.php"
+      ],
+      "js": ["solve-captcha.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "lib/worker.min.js",
+    "lib/tessearct-core.wasm.js",
+    "traineddata/*.traineddata.gz"
+  ]
+}
