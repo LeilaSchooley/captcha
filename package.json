@@ -4,7 +4,7 @@
   "description": "",
   "main": "solve-captcha.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "yarn lint && yarn test:unit && yarn test:browser",
     "build:firefox": "webpack",
     "build:chrome": "webpack --env target=chrome",
     "build:edge": "webpack --env target=edge",
@@ -15,17 +15,10 @@
     "package:firefox": "webpack --env package",
     "package:chrome": "webpack --env target=chrome --env package",
     "package:edge": "webpack --env target=edge --env package",
-    "postinstall": "if-env RELEASE_BUILD=1 || husky install",
-    "test": "yarn lint && yarn test:unit && yarn test:browser",
-    "test:unit": "jest",
     "test:browser": "karma start --single-run",
-    "sort-i18n-keys": "ts-node utils/sort-keys",
     "start:firefox": "webpack -w",
     "start:edge": "webpack -w --env target=chrome --env chromium=edge",
-    "start:chrome": "webpack -w --env target=chrome",
-    "update-snapshot": "ts-node utils/update-snapshot",
-    "version": "node utils/sync-manifest-version.mjs && git add manifest.json.src && ts-node utils/sync-xcode && git add xcode13/\"10ten Japanese Reader\".xcodeproj/project.pbxproj",
-    "zip-src": "ts-node utils/zip-src"
+    "start:chrome": "webpack -w --env target=chrome"
   },
   "keywords": [],
   "author": "",

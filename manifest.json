@@ -21,12 +21,8 @@
         "https://www.like4like.org/user/earn-soundcloud-listening.php",
         "https://www.like4like.org/user/earn-sites.php"
       ],
-      "js": ["solve-captcha.js"]
+      "js": ["./dist/main.js"]
     }
   ],
-  "web_accessible_resources": [
-    "lib/worker.min.js",
-    "lib/tessearct-core.wasm.js",
-    "traineddata/*.traineddata.gz"
-  ]
+  "web_accessible_resources": ["/node_modules"]
 }
